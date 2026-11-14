@@ -1,0 +1,67 @@
+/* Token Radar — dark radar-console theme. Near-black canvas, dark
+   surface, bright green accent. Deliberately not the sage-green light
+   page the starter ships: that look is house dashboard #2. */
+:root {
+  --canvas: #0e1411; --surface: #171f1a; --surface2: #1e2922;
+  --line: #2a382f; --ink: #e8f0ea; --mut: #93a89a;
+  --green: #2fd08a; --amber: #f0b429; --red: #e5484d; --blue: #6cb6ff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink);
+  font: 14px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.top { display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 20px 10px; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 800; letter-spacing: .14em; color: var(--green); font-size: 19px; }
+.sub { color: var(--mut); font-size: 12px; font-variant-numeric: tabular-nums; }
+main { max-width: 1240px; margin: 0 auto; padding: 12px 20px 28px; }
+.lede { margin: 6px 0 10px; color: var(--ink); font-size: 14px; }
+.lede b { color: var(--green); }
+.strip { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--green);
+  border-radius: 6px; padding: 9px 12px; margin: 0 0 12px; font-size: 13px; color: var(--ink); }
+.strip b { color: var(--green); }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.controls input, .controls select { background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 6px; padding: 7px 9px; font: inherit; }
+.controls input { flex: 1 1 220px; }
+.tabs { display: flex; gap: 0; }
+.tab { background: var(--surface); color: var(--mut); border: 1px solid var(--line);
+  padding: 7px 12px; cursor: pointer; font: inherit; }
+.tab:first-child { border-radius: 6px 0 0 6px; }
+.tab:last-child { border-radius: 0 6px 6px 0; }
+.tab.on { background: var(--green); color: #06110b; border-color: var(--green); font-weight: 700; }
+.count { color: var(--mut); font-size: 12px; margin: 0 0 6px; }
+table.board { width: 100%; border-collapse: collapse; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.board th, .board td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums; white-space: nowrap; }
+.board th { color: var(--mut); font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+  cursor: pointer; user-select: none; }
+.board th:hover { color: var(--green); }
+.board tbody tr { cursor: pointer; }
+.board tbody tr:hover { background: var(--surface2); }
+.board td.num, .board th.num { text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.name b { display: block; font-size: 14px; }
+.name span { color: var(--mut); font-size: 11px; }
+.up { color: var(--green); } .down { color: var(--red); }
+.bar { display: inline-block; height: 7px; background: var(--green); border-radius: 3px;
+  vertical-align: middle; margin-right: 7px; min-width: 2px; }
+.pill { font-size: 11px; padding: 2px 7px; border-radius: 20px; border: 1px solid var(--line); color: var(--mut); }
+.pill.watch { color: var(--amber); border-color: var(--amber); }
+.detail { background: var(--surface); border: 1px solid var(--green); border-radius: 6px;
+  padding: 14px 16px; margin: 0 0 12px; }
+.detail h2 { margin: 0 0 2px; font-size: 19px; }
+.detail h2 span { color: var(--mut); font-size: 13px; font-weight: 400; }
+.detail .why { color: var(--ink); margin: 4px 0 10px; }
+.detail table.factors { border-collapse: collapse; margin: 0 0 10px; width: 100%; }
+.factors td { padding: 4px 8px 4px 0; border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums; }
+.factors td:last-child { text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.factors td.note { color: var(--mut); font-size: 12px; text-align: left; }
+.factors tr.total td { font-weight: 800; color: var(--green); border-bottom: 0; }
+.check { font-size: 12px; color: var(--mut); margin: 0 0 10px; }
+.check b { color: var(--green); }
+.plan { margin: 0; padding-left: 20px; }
+.plan li { margin: 0 0 7px; }
+.plan li b { color: var(--green); }
+.total-line { font-weight: 800; color: var(--amber); margin: 8px 0 0; }
+.foot { color: var(--mut); font-size: 12px; margin-top: 14px; }

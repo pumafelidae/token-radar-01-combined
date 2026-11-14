@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+<script src="../data.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">TOKEN RADAR</div>
+  <div class="sub" id="asof"></div>
+</header>
+<main>
+  <p class="lede">40 watchlist protocols, ranked by implied value — plus the 160 early pre-token finds below the floor. Implied value = TVL × category multiple × (TVL / $200M)^-0.35 × growth × maturity, calibrated on live tokens.</p>
+  <div class="strip" id="strip"></div>
+  <section class="detail" id="detail" hidden></section>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search name or slug…" aria-label="Search">
+    <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+    <div class="tabs" role="tablist">
+      <button id="tabPre" class="tab on" type="button">Pre-token</button>
+      <button id="tabLive" class="tab" type="button">Live comparables</button>
+    </div>
+    <select id="sort" aria-label="Sort by">
+      <option value="implied">Sort: implied value</option>
+      <option value="tvl">Sort: TVL</option>
+      <option value="g7">Sort: 7d change</option>
+      <option value="age">Sort: age</option>
+      <option value="ratio">Sort: implied / TVL</option>
+    </select>
+  </div>
+  <p class="count" id="count"></p>
+  <table class="board">
+    <thead><tr>
+      <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="tvl">TVL</th>
+      <th data-k="g7">7d</th><th data-k="age">Age</th><th data-k="implied">Implied value</th><th>Status</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="foot">A protocol records no token when DefiLlama records none — that is the record, not proof it has none. Implied values are this radar's own claim, never a promise of a launch. Farm steps are a plan, not advice.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
